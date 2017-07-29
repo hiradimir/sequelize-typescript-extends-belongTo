@@ -4,7 +4,7 @@ import UserOperateModel from "../core/model/UserOperateModel";
 import BasicModel from "../core/model/BasicModel";
 
 @Table
-export default class Player extends BasicModel<Player> {
+export default class Player extends UserOperateModel<Player> {
 
   @Column
   name: string;
