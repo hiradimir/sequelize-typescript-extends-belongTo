@@ -1,0 +1,20 @@
+version: '2'
+services:
+  sh:
+    build: .
+    env_file: .env
+    links:
+      - postgresql
+    volumes:
+      - .:/home/user/app/
+      - /home/user/app/node_modules
+
+  postgresql:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "25432:5432"
+    container_name: postgres-sequelize-typescript-extends-belongTo-db
+
